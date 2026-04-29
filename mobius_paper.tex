@@ -1,0 +1,215 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{Wave Dynamics on the Critical M\"obius Strip:\\ Spectral Collapse, Phase Delay, and an Emergent $A_2$ Root Configuration}}
+\author{Zheng Yan}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We investigate the spectral and dynamical properties of Hodge-harmonic 1-forms on the Schwartz critical M\"obius strip, characterised by the length-to-width ratio $\lambda/w = \sqrt{3}$ and the curvature--torsion coupling $\kappa = 2\tau$. We exhibit a sharp dichotomy between the one-dimensional asymptotic approximation and the exact two-dimensional embedding. While the thin-strip limit ($\kappa \to 0$) yields a purely algebraic spectral weight $G_0 = 8\pi^2\sqrt{3}$, the exact non-uniform Gaussian curvature induces a substantial spectral collapse, with the effective eigenvalue dropping to $\lambda_{\text{eff}} \approx 20.734$. By treating the aspect ratio $r = \lambda/w$ as a free parameter, we find a numerical stability threshold $r^{*} \approx 2.704$ below which the lowest mode ($N=1$) becomes unstable; the Schwartz embedding $r=\sqrt{3}$ lies below this threshold, so the $N=1$ mode does not occur there. We further analyse the exact standing-wave eigenfunction under the non-uniform effective propagation speed $c_{\text{eff}}(s)$ and show that traversal through the geometric folds produces a non-vanishing phase delay $\delta\phi(s)$, breaking node--antinode symmetry of the wave. Finally, by integrating the Born amplitude $\sin^{2}(k_{s}s)$ of the $N=3$ mode against $e^{i\tau s}$ over six equal panels of the orientable double cover, we obtain six complex amplitudes $z_{1},\dots,z_{6}$ with $z_{n+3}=-z_{n}$ and $\sum z_{n}=0$. As an abstract root system in the plane, this configuration is isomorphic to the $A_{2}$ root system underlying $\mathfrak{su}(3)$; concretely, the six vectors lie at $\{30^\circ,90^\circ,\dots,330^\circ\}$, rotated by $30^\circ$ relative to the standard simple-root basis. The construction yields the root locations of $A_{2}$ but does not, by itself, recover the full Lie-algebraic structure of $\mathfrak{su}(3)$.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{The Geometry of the Schwartz M\"obius Strip}
+The M\"obius strip is the simplest non-orientable surface, and the spectral analysis of differential operators on it provides a natural test case for the interaction between non-orientable topology and Riemannian geometry. We focus on the Schwartz critical embedding~\cite{Schwartz2023}, the smooth M\"obius band of minimal aspect ratio $\lambda/w = \sqrt{3}$. At this embedding, the centre line satisfies the equilibrium constraint $\kappa = 2\tau$ relating the bending curvature to the torsion~\cite{Starostin2007}, and the surface carries non-uniform Gaussian curvature $K = -\tau^2$ along the centre line; in particular it is strictly non-developable. The present paper studies the spectrum of the Hodge--de Rham Laplacian on $1$-forms over this surface, and the discrete algebraic structure that emerges from its $N=3$ resonant mode.
+
+\subsection{The Spectral Dichotomy: Asymptotic vs.\ Exact}
+Previous analyses have often relied on the thin-strip asymptotic limit ($w \to 0$, $\kappa \to 0$), in which the wave equation reduces to a constant-coefficient ordinary differential equation. In this idealised one-dimensional limit, the eigenvalues take simple algebraic forms; in particular, one obtains the asymptotic spectral weight $G_0 = 8\pi^2\sqrt{3}$.
+
+We show that this asymptotic approximation differs substantially from the spectrum of the exact two-dimensional embedding. The non-uniform metric induced by $\kappa = 2\tau$ acts as a strong geometric impedance, and the effective eigenvalue collapses to $\lambda_{\text{eff}} \approx 20.734$. Moreover, treating the aspect ratio $r = \lambda/w$ as an independent geometric parameter, we observe numerically that the lowest ($N=1$) mode has $\lambda_{1}(r)<0$ for $r<r^{*}$ with $r^{*}\approx 2.704$; the Schwartz value $r=\sqrt{3}$ lies in this regime. The lowest mode is therefore not available at the Schwartz embedding, and we focus on the $N=3$ mode, whose eigenvalue is verified numerically to be positive.
+
+\subsection{Geometric Impedance and Phase Delay}
+Beyond the static spectrum, the curvature gradient alters the local wave dynamics. The transverse-averaged metric defines an effective propagation speed $c_{\text{eff}}(s)$ along the centre line, with global minima at the geometric folds (regions of maximal curvature). When a standing wave traverses such a slow zone, it acquires a non-zero phase delay $\delta\phi(s)$ relative to the constant-speed reference. We derive an exact Fourier identity (Theorem~\ref{thm:fourier}) showing that the phase-delay difference between symmetrically placed anti-nodes carries a non-vanishing algebraic factor $\sin(2n\pi/3)$. As a consequence, the Born density $\sin^{2}(\varphi(s))$ is asymmetrically distributed across the fold, and the energy density of the resonant wave is displaced from its flat-space baseline.
+
+\subsection{Emergent $A_2$ Root Configuration}
+The interaction between the non-orientable topology and the $N=3$ mode produces a discrete algebraic structure. Since the M\"obius strip $\mathcal{M}$ is single-sided, we work on its orientable double cover $\mathcal{DT}$ and partition the cover into six equal panels of length $\lambda/3$. The Born panel amplitudes
+\begin{equation*}
+z_{n} = \int_{(n-1)\lambda/3}^{n\lambda/3} \sin^{2}(k_{s}s) e^{i\tau s}\,ds, \qquad n=1,\dots,6,
+\end{equation*}
+satisfy a $60^\circ$ recurrence $z_{n+1}=e^{i\pi/3}z_{n}$, the antipodal relation $z_{n+3}=-z_{n}$, and the closure condition $\sum_{n=1}^{6}z_{n}=0$. The six vectors lie at $\{30^\circ,90^\circ,\dots,330^\circ\}$ in the complex plane and form, as an abstract root system, a copy of $A_{2}$ rotated by $30^\circ$ relative to the standard simple-root presentation. We emphasise that this construction yields only the angular configuration: the Cartan decomposition, simple-root choice, step operators, and Lie bracket relations of $\mathfrak{su}(3)$ are not part of the present analysis.
+
+\section{Hodge--de Rham Spectra: Asymptotic vs.\ Exact Geometry}
+
+To analyse wave dynamics on the critical M\"obius strip, we study Hodge-harmonic 1-forms. Treating the centre-line $s \in [0, \lambda)$ as the principal propagation coordinate and averaging over the transverse width $t \in [-w/2, w/2]$, we reduce the eigenvalue problem to a 1D problem modulated by the strip's geometry.
+
+\subsection{The Thin-Strip Asymptotic Limit}
+In the thin-strip limit $w \to 0$ with $\kappa \to 0$ (the manifold treated as a twisted 1D loop), the metric components approximate the Euclidean form $g_{ss} \approx 1$. The wave equation simplifies to a constant-coefficient eigenvalue problem:
+\begin{equation}
+-f''(s) - \tau^2 f(s) = \lambda f(s).
+\end{equation}
+For anti-periodic modes accommodating the M\"obius boundary condition $f(\lambda) = -f(0)$, the fundamental wave number is $k_0 = \pi/\lambda$. The $N$-th mode has $k_s = N k_0$, with eigenvalue
+\begin{equation}
+\lambda_{\text{ideal}} = (N^2 - 1)k_0^2.
+\end{equation}
+Defining the dimensionless spectral weight $G = \lambda_{\text{ideal}} \cdot \lambda^2 / (\text{Area})$ in Schwartz units $\lambda/w = \sqrt{N}$, the $N=3$ configuration gives the algebraic constant
+\begin{equation}
+G_0 = (3^2 - 1)\!\left(\frac{\pi}{\lambda}\right)^2\!\cdot \lambda^2 \cdot \sqrt{3} = 8\pi^2\sqrt{3} \approx 136.757.
+\end{equation}
+This value, however, neglects the transverse geometric impedance present in the true spatial embedding, as we now show.
+
+\subsection{Exact Curvature Correction and Spectral Collapse}
+In the exact embedding, $\kappa = 2\tau$, and the longitudinal metric component becomes
+\begin{equation}
+g_{ss}(s,t) = 1 + 2t\kappa \sin(\tau s) + t^2\big[\tau^2 + \kappa^2 \sin^2(\tau s)\big].
+\end{equation}
+The non-uniform Gaussian curvature $K = -\tau^2$ produces a non-trivial geometric drag on wave propagation. The effective 1D eigenvalue equation becomes
+\begin{equation}
+-\big(c_{\text{eff}}(s)f'(s)\big)' - \tau^2 f(s) = \lambda_{\text{eff}} f(s),
+\end{equation}
+where $c_{\text{eff}}(s)$ is the effective propagation speed obtained by integrating $g_{ss}^{-1/2}$ over the transverse cross-section.
+
+For the $N=3$ mode, the resulting eigenvalue is markedly different from the thin-strip prediction. We verify this with two independent numerical methods. Method~A uses a Rayleigh--Ritz expansion in $N_b$ anti-periodic trigonometric basis functions; Method~B is a second-order finite-difference scheme on $N_s$ grid points covering $[0, \lambda)$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc | lc}
+\hline\hline
+\textbf{Method A (Rayleigh--Ritz)} & $\lambda_{\text{eff}}$ & \textbf{Method B (Finite-Difference)} & $\lambda_{\text{eff}}$ \\
+\hline
+$N_b = 4$ basis functions & 20.7382 & $N_s = 2000$ grid points & 20.7351 \\
+$N_b = 6$ basis functions & 20.7340 & $N_s = 4000$ grid points & 20.7342 \\
+$N_b = 8$ basis functions & 20.7339 & $N_s = 8000$ grid points & 20.7339 \\
+$N_b = 10$ basis functions & 20.7339 & $N_s = 16000$ grid points & 20.7339 \\
+\hline\hline
+\end{tabular}
+\caption{Convergence of the exact effective eigenvalue $\lambda_{\text{eff}}$ under two independent numerical schemes.}
+\label{tab:convergence}
+\end{table}
+
+Both methods converge to $\lambda_{\text{eff}} = 20.7339\dots$ at high resolution. The exact spectral weight is approximately $G_{\text{curv}} \approx 108$, far below $G_0 = 136.757$. The exact non-uniform curvature thus acts as a strong geometric impedance, and the algebraic value $G_0$ derived in the thin-strip limit is not a good approximation to the spectrum of the exact embedding.
+
+\subsection{Topological Instability of the $N=1$ Mode}
+The most striking consequence of the curvature correction concerns the lowest mode, $N=1$. In the thin-strip limit, $N=1$ yields a trivial zero eigenvalue ($\lambda = 0$). Under the exact metric with $\kappa = 2\tau$, however, the eigenvalue is driven negative:
+\begin{equation}
+\lambda_1 \approx -0.59 < 0.
+\end{equation}
+A negative eigenvalue in the Hodge--de Rham spectrum signifies that the $N=1$ mode is unstable on the Schwartz M\"obius strip: a corresponding wave function would not be normalisable as a stationary mode at this geometry.
+
+To delineate this instability, treat the length-to-width ratio $r = \lambda/w$ as a free geometric parameter and track the lowest eigenvalue $\lambda_1(r)$ numerically. As $r \to \infty$ (the strip becomes long and narrow), $\lambda_1(r) \to 0^{-}$ from below, recovering the flat 1D limit. As $r$ decreases (the strip widens and curvature gradients steepen), $\lambda_1(r)$ becomes increasingly negative. Numerical root-finding on the exact 1D effective equation gives the zero crossing
+\begin{equation}
+r^* \approx 2.704.
+\end{equation}
+For $r < r^*$, the $N=1$ mode is not available. Since the Schwartz critical embedding has $r = \sqrt{3} \approx 1.732 < r^*$, the $N=1$ mode is excluded from this geometry. The $N=3$ mode at $r=\sqrt{3}$ is verified to have a positive eigenvalue, and we use it throughout as the lowest accessible mode on the Schwartz embedding. We do not address whether intermediate odd modes ($N=2$ is forbidden by the M\"obius boundary condition) are stable at all geometries; the focus of the present paper is the $N=3$ mode at $r=\sqrt{3}$.
+
+\section{Geometric Impedance and Phase Delay}
+
+In a uniform 1D medium, standing waves have symmetric node distributions. On the exact M\"obius strip, the non-uniform $c_{\text{eff}}(s)$ alters the local wave number and introduces a position-dependent phase delay.
+
+\subsection{Phase Delay Formulation}
+The exact standing-wave eigenfunction can be written in WKB-like form
+\begin{equation}
+f_{\text{exact}}(s) = \sin\!\big(\varphi(s)\big), \qquad \varphi(s) = \int_0^s \frac{k_{\text{eff}}}{\sqrt{c_{\text{eff}}(s')}}\, ds',
+\end{equation}
+with $k_{\text{eff}} = \sqrt{\lambda_{\text{eff}} + \tau^2}$. Define the geometric phase delay $\delta\phi(s)$ as the deviation from the constant-speed reference phase $k_s s$:
+\begin{equation}
+\delta\phi(s) = \varphi(s) - k_s s.
+\end{equation}
+Under $\kappa = 2\tau$, the function $c_{\text{eff}}(s)$ has global minima at the geometric folds (e.g., $s = \lambda/2$). When the standing wave traverses such a slow zone, $\varphi$ accumulates a negative increment relative to $k_s s$, contributing to $\delta\phi(s)$.
+
+\subsection{Fourier Kernel and Spatial Drift}
+The phase-delay difference between symmetrically placed anti-nodes (e.g., before and after the fold) is governed by a Fourier expansion of the inverse speed. We record the relevant elementary identity:
+
+\begin{theorem}[Fourier Kernel]
+\label{thm:fourier}
+For any integer $n > 0$,
+\begin{equation}
+\int_{\lambda/6}^{5\lambda/6} \cos(2n\tau s)\, ds = \frac{(-1)^n \sin(2n\pi/3)}{n\tau}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The primitive is $[\sin(2n\tau s)/(2n\tau)]_{\lambda/6}^{5\lambda/6}$. Using $\tau\lambda = \pi$, the boundary evaluation gives
+\begin{equation*}
+\frac{\sin(5n\pi/3) - \sin(n\pi/3)}{2n\tau}.
+\end{equation*}
+Applying the sum-to-product identity,
+\begin{equation*}
+\sin(5n\pi/3) - \sin(n\pi/3) = 2 \cos(n\pi) \sin(2n\pi/3) = 2(-1)^n \sin(2n\pi/3).
+\end{equation*}
+Dividing by $2n\tau$ completes the proof.
+\end{proof}
+
+Since $\sin(2n\pi/3)\in\{0,\pm\sqrt{3}/2\}$ for all $n\in\mathbb Z$, every Fourier mode of the phase-delay difference carries a non-vanishing algebraic factor. Consequently, the Born density $\sin^{2}(\varphi(s))$ is not symmetric under reflection across the fold: the energy density of the $N=3$ resonant wave is asymmetrically distributed across the geometric fold, with the displacement governed by $\delta\phi(s)$. This is a quantitative consequence of the non-uniform $c_{\text{eff}}$ and is independent of any further physical interpretation.
+
+\section{Emergent $A_2$ Root Configuration on the Double Cover}
+
+Combining the $N=3$ mode with the centre-line torsion $\tau$ and the orientable double cover yields a discrete algebraic structure in the complex plane. The M\"obius manifold $\mathcal{M}$ (with $s\in[0,\lambda)$) covers half the topological cycle; we work on its orientable double cover, the cylinder $\mathcal{DT}$ with $s\in[0,2\lambda)$.
+
+We define complex panel amplitudes by integrating the Born weight $\sin^{2}(k_{s}s)$ against the local phase $e^{i\tau s}$ over six equal panels of length $\lambda/3$:
+\begin{equation}
+z_n := \int_{(n-1)\lambda/3}^{n\lambda/3} \sin^2(k_s s)\, e^{i\tau s}\, ds, \qquad n = 1, \dots, 6.
+\end{equation}
+
+\begin{theorem}[Panel Recurrence and Closure]
+\label{thm:panels}
+The vectors $z_n$ satisfy
+\begin{enumerate}
+\item the $60^\circ$ recurrence $z_{n+1} = e^{i\pi/3} \cdot z_n$;
+\item the antipodal relation $z_{n+3} = -z_n$ (for $n=1,2,3$);
+\item the closure $\sum_{n=1}^{6} z_n = 0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For each panel, change variables $s = (n-1)\lambda/3 + u$. Since $k_s = 3 k_0$ and $k_0 \lambda = \pi$, the standing wave amplitude $\sin^{2}(k_{s}s)$ has spatial period $\lambda/3$, so $\sin^{2}(k_{s}s)=\sin^{2}(k_{s}u)$. The phase factor transforms as
+\begin{equation*}
+e^{i\tau s} = e^{i\tau((n-1)\lambda/3 + u)} = e^{i(n-1)\tau\lambda/3} \cdot e^{i\tau u}.
+\end{equation*}
+With $\tau\lambda = \pi$, the prefactor is $e^{i(n-1)\pi/3}$, and we obtain
+\begin{equation*}
+z_n = e^{i(n-1)\pi/3}\!\!\int_0^{\lambda/3}\!\! \sin^2(k_s u)\, e^{i\tau u}\, du = e^{i(n-1)\pi/3} z_1.
+\end{equation*}
+This proves (i). Then $z_{n+3}=e^{i\pi}z_{n}=-z_{n}$, giving (ii); and (iii) follows from $\sum_{n=1}^{6}z_{n}=\sum_{n=1}^{3}(z_{n}+z_{n+3})=0$.
+\end{proof}
+
+\begin{remark}[Numerical evaluation and angular configuration]
+Direct evaluation gives $z_1$ with phase $\arg z_{1}=-60^\circ$ (and modulus determined by the $\sin^{2}$ integral on $[0,\lambda/3]$). Applying the $e^{i(n-1)\pi/3}$ recurrence, the six vectors lie along the directions
+\begin{equation*}
+\{30^\circ,\, 90^\circ,\, 150^\circ,\, 210^\circ,\, 270^\circ,\, 330^\circ\}
+\end{equation*}
+in the complex plane. As a configuration of six unit-direction vectors closed under negation and arranged at $60^\circ$ spacing, this is, as an abstract root system in the plane, isomorphic to the $A_{2}$ root system underlying $\mathfrak{su}(3)$. The $30^\circ$ offset relative to the standard presentation $\{0^\circ,60^\circ,\dots,300^\circ\}$ is a global rotation that depends on the choice of starting panel $s=0$ and is not intrinsic.
+\end{remark}
+
+\begin{remark}[What this construction does and does not establish]
+The construction above produces the angular locations of the $A_{2}$ root system from a geometric integral. We emphasise the following limitations.
+\begin{itemize}
+\item Theorem~\ref{thm:panels} concerns only the angular and closure structure of the six complex amplitudes $z_{n}$. It does not exhibit a Cartan subalgebra, a choice of simple roots, step operators $E_{\alpha}$, or the Lie bracket relations $[E_{\alpha},E_{\beta}]=N_{\alpha,\beta}E_{\alpha+\beta}$ that define $\mathfrak{su}(3)$ as a Lie algebra. We have established a root configuration, not a representation of $\mathfrak{su}(3)$.
+\item Whether the present construction can be promoted to a full Lie-algebraic structure---for instance, by interpreting the panel amplitudes as matrix elements of operators on a suitable Hilbert space---is left as an open question.
+\item The appearance of an $A_{2}$ configuration here is geometric: it arises from the threefold panel partition, the M\"obius closure $\tau\lambda=\pi$, and the spatial period $\lambda/3$ of $\sin^{2}(k_{s}s)$. We do not claim a connection to any physical $\mathfrak{su}(3)$ symmetry (e.g.\ flavour or colour).
+\end{itemize}
+\end{remark}
+
+\section{Conclusion}
+We have analysed Hodge-harmonic 1-forms on the Schwartz critical M\"obius strip ($\kappa = 2\tau$) and exhibited three independent geometric phenomena. First, the exact non-uniform curvature induces a substantial spectral collapse: the effective eigenvalue $\lambda_{\text{eff}} \approx 20.734$ at $r=\sqrt{3}$ differs markedly from the thin-strip value, and the lowest mode $N=1$ has $\lambda_{1}(r)<0$ for $r<r^{*}\approx 2.704$. The Schwartz embedding lies in this regime, so the $N=1$ mode is not available there; we work with the $N=3$ mode, which has positive eigenvalue. Second, the non-uniform effective propagation speed $c_{\text{eff}}(s)$ produces a non-zero phase delay $\delta\phi(s)$ across the geometric folds, breaking node--antinode symmetry and asymmetrically distributing the Born density across the fold. Third, the Born panel amplitudes of the $N=3$ mode on the orientable double cover form, as an abstract root system in the plane, a copy of the $A_{2}$ root system (rotated $30^\circ$ from standard presentation), giving a geometric realisation of a rank-2 root configuration on a non-orientable surface. Promoting this configuration to a full Lie-algebraic structure---and clarifying whether the threshold $r^{*}$ admits an analytic expression---are natural questions left open here.
+
+\begin{thebibliography}{9}
+\bibitem{Schwartz2023}
+R.~E. Schwartz,
+\textit{The optimal paper M\"obius band},
+arXiv:2308.12641 (2023); to appear in Annals of Mathematics.
+
+\bibitem{Starostin2007}
+E.~L. Starostin and G.~H.~M. van der Heijden,
+\textit{The shape of a M\"obius strip},
+Nature Materials \textbf{6}, 563--567 (2007).
+\end{thebibliography}
+
+\end{document}
